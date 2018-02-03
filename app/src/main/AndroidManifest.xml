@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.hp.tourmate">
 
-
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature
         android:name="android.hardware.camera.autofocus"
@@ -25,22 +24,18 @@
     <uses-permission android:name="android.permission.VIBRATE" />
 
     <application
-        android:largeHeap="true"
         android:name=".main.tie.hackathon.travelguide.MyApplication"
         android:allowBackup="true"
         android:icon="@drawable/google_travel_logo"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-
         <activity
             android:name=".main.tie.hackathon.travelguide.EventImage"
             android:configChanges="orientation|screenSize"
-            android:theme="@style/AppTheme"/>
-
-
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
@@ -126,8 +121,8 @@
         <activity android:name=".MyTrips" />
         <activity android:name=".AddNewTrip" />
         <activity android:name=".MyTripInfo" />
-        <activity android:name=".Tweets"/>
+        <activity android:name=".Tweets" />
+        <activity android:name=".main.tie.hackathon.travelguide.login.LoginActivity"></activity>
     </application>
-
 
 </manifest>
