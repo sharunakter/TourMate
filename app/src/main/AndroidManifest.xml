@@ -44,28 +44,21 @@
             android:name="com.gun0912.tedpicker.ImagePickerActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme_picker" />
-
-        <service android:name=".MusicService" />
-        <service android:name=".LocationService" />
-
+        <service android:name=".main.tie.hackathon.travelguide.LocationService" />
         <activity
-            android:name=".Music"
-            android:label="@string/title_activity_music"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".SelectCity"
+            android:name=".main.tie.hackathon.travelguide.SelectCity"
             android:label="@string/title_activity_select_city"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Checklist"
+            android:name=".main.tie.hackathon.travelguide.Checklist"
             android:label="@string/title_activity_select_city"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".SelectModeOfTransport"
+            android:name=".main.tie.hackathon.travelguide.SelectModeOfTransport"
             android:label="@string/title_activity_select__mode_of_transport"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".CarDirections"
+            android:name=".main.tie.hackathon.travelguide.CarDirections"
             android:label="@string/title_activity_car_directions"
             android:theme="@style/AppTheme.NoActionBar" />
 
@@ -77,27 +70,27 @@
             android:value="@integer/google_play_services_version" />
 
         <activity
-            android:name=".BusList"
+            android:name=".main.tie.hackathon.travelguide.BusList"
             android:label="@string/title_activity_bus_list"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".ShoppingCurrentCity"
+            android:name=".main.tie.hackathon.travelguide.ShoppingCurrentCity"
             android:label="@string/title_activity_shopping_currentcity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".TrainList"
+            android:name=".main.tie.hackathon.travelguide.TrainList"
             android:label="@string/title_activity_train_list"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Hotels"
+            android:name=".main.tie.hackathon.travelguide.Hotels"
             android:label="@string/title_activity_hotels"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".MapRealTimeActivity"
+            android:name=".main.tie.hackathon.travelguide.MapRealTimeActivity"
             android:label="@string/title_activity_map"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Splash"
+            android:name=".main.tie.hackathon.travelguide.Splash"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -107,22 +100,21 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".destinations.funfacts.FunFacts"
+            android:name=".main.tie.hackathon.travelguide.destinations.funfacts.FunFacts"
             android:label="@string/title_activity_fun_facts"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".DetectedBeacon" />
-        <activity android:name=".ShareContact" />
+        <activity android:name=".main.tie.hackathon.travelguide.DetectedBeacon" />
+        <activity android:name=".main.tie.hackathon.travelguide.ShareContact" />
         <activity
-            android:name=".login.LoginActivity"
+            android:name=".main.tie.hackathon.travelguide.login.LoginActivity"
             android:label="@string/title_activity_login"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".destinations.description.FinalCityInfo" />
-        <activity android:name=".PlacesOnMap" />
-        <activity android:name=".MyTrips" />
-        <activity android:name=".AddNewTrip" />
-        <activity android:name=".MyTripInfo" />
-        <activity android:name=".Tweets" />
-        <activity android:name=".main.tie.hackathon.travelguide.login.LoginActivity"></activity>
+        <activity android:name=".main.tie.hackathon.travelguide.destinations.description.FinalCityInfo" />
+        <activity android:name=".main.tie.hackathon.travelguide.PlacesOnMap" />
+        <activity android:name=".main.tie.hackathon.travelguide.MyTrips" />
+        <activity android:name=".main.tie.hackathon.travelguide.AddNewTrip" />
+        <activity android:name=".main.tie.hackathon.travelguide.MyTripInfo" />
+        <activity android:name=".main.tie.hackathon.travelguide.Tweets" />
     </application>
 
 </manifest>

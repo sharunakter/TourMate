@@ -26,6 +26,9 @@ import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.dd.processbutton.FlatButton;
+import com.example.hp.tourmate.R;
+import com.example.hp.tourmate.main.adapters.NestedListView;
+import com.example.hp.tourmate.main.utils.Constants;
 import com.gun0912.tedpicker.ImagePickerActivity;
 import com.squareup.picasso.Picasso;
 
@@ -40,9 +43,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
-
-import utils.Constants;
-import adapters.NestedListView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -55,13 +55,20 @@ import okhttp3.Response;
 
 public class MyTripInfo extends AppCompatActivity {
 
-    @BindView(R.id.image)       ImageView iv;
-    @BindView(R.id.head)        TextView tite;
-    @BindView(R.id.time)        TextView date;
-    @BindView(R.id.newfrriend)  FlatButton add;
-    @BindView(R.id.lv)          TwoWayView twoway;
-    @BindView(R.id.friendlist)  NestedListView lv;
-    @BindView(R.id.fname)       AutoCompleteTextView frendname;
+    @BindView(R.id.image)
+    ImageView iv;
+    @BindView(R.id.head)
+    TextView tite;
+    @BindView(R.id.time)
+    TextView date;
+    @BindView(R.id.newfrriend)
+    FlatButton add;
+    @BindView(R.id.lv)
+    TwoWayView twoway;
+    @BindView(R.id.friendlist)
+    NestedListView lv;
+    @BindView(R.id.fname)
+    AutoCompleteTextView frendname;
 
     private String id;
     private String title;
@@ -89,19 +96,19 @@ public class MyTripInfo extends AppCompatActivity {
 
         ButterKnife.bind(this);
 
-        intent      = getIntent();
-        id          = intent.getStringExtra("_id");
-        img         = intent.getStringExtra("_image");
+        intent = getIntent();
+        id = intent.getStringExtra("_id");
+        img = intent.getStringExtra("_image");
 
         mediaimages = new ArrayList<>();
-        imagesuri   = new ArrayList<>();
-        fname       = new ArrayList<>();
+        imagesuri = new ArrayList<>();
+        fname = new ArrayList<>();
 
         Picasso.with(this).load(img).into(iv);
 
-        mHandler    = new Handler(Looper.getMainLooper());
+        mHandler = new Handler(Looper.getMainLooper());
 
-        File sdDir  = new File(mainfolder);
+        File sdDir = new File(mainfolder);
         File[] sdDirFiles = sdDir.listFiles();
         for (File singleFile : sdDirFiles) {
             if (!singleFile.isDirectory())
@@ -120,7 +127,8 @@ public class MyTripInfo extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
-    @OnTextChanged(R.id.fname) void onTextChanged(){
+    @OnTextChanged(R.id.fname)
+    void onTextChanged() {
         nameyet = frendname.getText().toString();
         if (!nameyet.contains(" ")) {
             Log.e("name", nameyet + " ");
@@ -128,7 +136,8 @@ public class MyTripInfo extends AppCompatActivity {
         }
     }
 
-    @OnClick(R.id.newfrriend) void onClick(){
+    @OnClick(R.id.newfrriend)
+    void onClick() {
         addfriend();
     }
 
@@ -210,7 +219,6 @@ public class MyTripInfo extends AppCompatActivity {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == INTENT_REQUEST_GET_IMAGES && resultCode == Activity.RESULT_OK) {
-
             ArrayList<Uri> image_uris = data.getParcelableArrayListExtra(ImagePickerActivity.EXTRA_IMAGE_URIS);
             for (int i = 0; i < image_uris.size(); i++) {
                 Log.e("cdscsd", image_uris.get(i).getPath());

@@ -11,7 +11,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import com.eftimoff.androipathview.PathView;
-import tie.hackathon.travelguide.login.LoginActivity;
+import com.example.hp.tourmate.R;
+import com.example.hp.tourmate.main.tie.hackathon.travelguide.login.LoginActivity;
 
 public class Splash extends AppCompatActivity {
 

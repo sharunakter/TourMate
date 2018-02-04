@@ -14,26 +14,24 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-
 import com.ToxicBakery.viewpager.transforms.AccordionTransformer;
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.example.hp.tourmate.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
-
 import java.util.ArrayList;
 import java.util.List;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import tie.hackathon.travelguide.R;
 
 /**
  * Funfacts activity
  */
 public class FunFacts extends AppCompatActivity implements FunFactsView {
 
-    @BindView(R.id.vp) ViewPager viewPager;
+    @BindView(R.id.vp)
+    ViewPager viewPager;
 
     private String id;
     private String name;
@@ -50,10 +48,10 @@ public class FunFacts extends AppCompatActivity implements FunFactsView {
 
         ButterKnife.bind(this);
 
-        Intent i    = getIntent();
-        id          = i.getStringExtra("id_");
-        name        = i.getStringExtra("name_");
-        mHandler    = new Handler(Looper.getMainLooper());
+        Intent i = getIntent();
+        id = i.getStringExtra("id_");
+        name = i.getStringExtra("name_");
+        mHandler = new Handler(Looper.getMainLooper());
 
         initPresenter();
         getSupportActionBar().hide();
@@ -81,6 +79,7 @@ public class FunFacts extends AppCompatActivity implements FunFactsView {
     /**
      * method called by presenter after successful network request
      * Presenter passes JSON facts array used for setting up view-pager
+     *
      * @param factsArray -> JSON array of facts
      */
     @Override

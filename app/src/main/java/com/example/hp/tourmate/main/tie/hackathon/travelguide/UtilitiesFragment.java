@@ -13,16 +13,22 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+
+import com.example.hp.tourmate.R;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class UtilitiesFragment extends Fragment implements View.OnClickListener {
 
     private Activity activity;
-    @BindView(R.id.sharecontact) LinearLayout sharecontact;
-    @BindView(R.id.checklist) LinearLayout checklist;
+    @BindView(R.id.sharecontact)
+    LinearLayout sharecontact;
+    @BindView(R.id.checklist)
+    LinearLayout checklist;
 
-    public UtilitiesFragment() {}
+    public UtilitiesFragment() {
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -30,7 +36,7 @@ public class UtilitiesFragment extends Fragment implements View.OnClickListener 
 
         View v = inflater.inflate(R.layout.fragment_utility, container, false);
 
-        ButterKnife.bind(this,v);
+        ButterKnife.bind(this, v);
 
         sharecontact.setOnClickListener(this);
         checklist.setOnClickListener(this);

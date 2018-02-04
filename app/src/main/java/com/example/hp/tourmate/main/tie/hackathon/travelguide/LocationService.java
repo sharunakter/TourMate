@@ -24,10 +24,12 @@ import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.widget.Toast;
 
-import utils.Constants;
+import com.example.hp.tourmate.MainActivity;
+import com.example.hp.tourmate.R;
+import com.example.hp.tourmate.main.utils.Constants;
 
 /**
- * Created by swati on 17/10/15.
+ * Created by Zahangir Alam on 2/04/18.
  * <p>
  * A Service that checks user's current latitude and longitude,
  * and displays a notification on a given one

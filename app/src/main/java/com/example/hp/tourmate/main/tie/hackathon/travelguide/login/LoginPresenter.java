@@ -6,12 +6,10 @@ package com.example.hp.tourmate.main.tie.hackathon.travelguide.login;
 
 import android.os.Handler;
 
+import com.example.hp.tourmate.main.utils.Constants;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.IOException;
-
-import utils.Constants;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.OkHttpClient;
@@ -41,10 +39,10 @@ public class LoginPresenter {
     /**
      * Calls Signup API
      *
-     * @param name      user's name
-     * @param num       user's phone number
-     * @param pass      password user entered
-     * @param mhandler  handler
+     * @param name     user's name
+     * @param num      user's phone number
+     * @param pass     password user entered
+     * @param mhandler handler
      */
     public void ok_signUp(final String name, final String num, String pass, final Handler mhandler) {
 

@@ -5,21 +5,19 @@ package com.example.hp.tourmate.main.tie.hackathon.travelguide.destinations.funf
  */
 
 
+import android.util.Log;
 
-        import android.util.Log;
+import com.example.hp.tourmate.main.utils.Constants;
 
-        import org.json.JSONArray;
-        import org.json.JSONException;
-        import org.json.JSONObject;
-
-        import java.io.IOException;
-
-        import utils.Constants;
-        import okhttp3.Call;
-        import okhttp3.Callback;
-        import okhttp3.OkHttpClient;
-        import okhttp3.Request;
-        import okhttp3.Response;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+import java.io.IOException;
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 /**
  * Created by niranjanb on 14/06/17.

@@ -20,6 +20,7 @@ import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
 
+import com.example.hp.tourmate.R;
 import com.example.hp.tourmate.main.utils.Constants;
 
 import org.json.JSONArray;
@@ -29,6 +30,7 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import okhttp3.Call;
@@ -41,13 +43,17 @@ import okhttp3.Response;
 public class SelectCity extends AppCompatActivity {
 
     @SuppressWarnings("WeakerAccess")
-    @BindView(R.id.source) Spinner source;
+    @BindView(R.id.source)
+    Spinner source;
     @SuppressWarnings("WeakerAccess")
-    @BindView(R.id.destination) Spinner dest;
+    @BindView(R.id.destination)
+    Spinner dest;
     @SuppressWarnings("WeakerAccess")
-    @BindView(R.id.pb) ProgressBar pb;
+    @BindView(R.id.pb)
+    ProgressBar pb;
     @SuppressWarnings("WeakerAccess")
-    @BindView(R.id.ok) Button ok;
+    @BindView(R.id.ok)
+    Button ok;
     @SuppressWarnings("WeakerAccess")
     private
     SharedPreferences s;
@@ -119,7 +125,6 @@ public class SelectCity extends AppCompatActivity {
         getSupportActionBar().setTitle(" ");
 
     }
-
 
 
     @SuppressWarnings("WeakerAccess")

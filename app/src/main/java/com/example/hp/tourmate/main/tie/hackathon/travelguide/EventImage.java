@@ -9,10 +9,11 @@ import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 
-import java.util.ArrayList;
+import com.example.hp.tourmate.R;
+import com.example.hp.tourmate.main.adapters.ImageAdapter;
+import com.example.hp.tourmate.main.utils.Constants;
 
-import utils.Constants;
-import adapters.ImageAdapter;
+import java.util.ArrayList;
 
 
 public class EventImage extends AppCompatActivity {

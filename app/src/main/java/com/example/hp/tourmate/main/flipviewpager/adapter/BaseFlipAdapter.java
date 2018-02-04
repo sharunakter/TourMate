@@ -10,11 +10,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
+import com.example.hp.tourmate.R;
+import com.example.hp.tourmate.main.flipviewpager.utils.FlipSettings;
+import com.example.hp.tourmate.main.flipviewpager.view.FlipViewPager;
 import java.util.List;
-
-import flipviewpager.utils.FlipSettings;
-import flipviewpager.view.FlipViewPager;
-import tie.hackathon.travelguide.R;
 
 /**
  * @author Yalantis

@@ -25,6 +25,8 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.example.hp.tourmate.R;
+import com.example.hp.tourmate.main.utils.Constants;
 import com.fourmob.datetimepicker.date.DatePickerDialog;
 import com.fourmob.datetimepicker.date.DatePickerDialog.OnDateSetListener;
 import com.sleepbot.datetimepicker.time.RadialPickerLayout;
@@ -37,7 +39,6 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.Calendar;
 
-import utils.Constants;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import okhttp3.Call;
@@ -49,22 +50,26 @@ import okhttp3.Response;
 /**
  * Displays a list of available buses
  */
-public class BusList extends AppCompatActivity implements OnDateSetListener, TimePickerDialog.OnTimeSetListener,View.OnClickListener {
+public class BusList extends AppCompatActivity implements OnDateSetListener, TimePickerDialog.OnTimeSetListener, View.OnClickListener {
 
     private static final String DATEPICKER_TAG = "datepicker";
 
-    @BindView(R.id.pb)          ProgressBar pb;
-    @BindView(R.id.music_list)  ListView    lv;
-    @BindView(R.id.seldate)     TextView    selectdate;
-    @BindView(R.id.city)        TextView    city;
+    @BindView(R.id.pb)
+    ProgressBar pb;
+    @BindView(R.id.music_list)
+    ListView lv;
+    @BindView(R.id.seldate)
+    TextView selectdate;
+    @BindView(R.id.city)
+    TextView city;
 
     private String source;
     private String dest;
     private String dates = "17-October-2015";
 
-    private Handler             mHandler;
-    private SharedPreferences   sharedPreferences;
-    private DatePickerDialog    datePickerDialog;
+    private Handler mHandler;
+    private SharedPreferences sharedPreferences;
+    private DatePickerDialog datePickerDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,9 +81,9 @@ public class BusList extends AppCompatActivity implements OnDateSetListener, Tim
 
         ButterKnife.bind(this);
 
-        sharedPreferences   = PreferenceManager.getDefaultSharedPreferences(this);
-        source              = sharedPreferences.getString(Constants.SOURCE_CITY, "delhi");
-        dest                = sharedPreferences.getString(Constants.DESTINATION_CITY, "mumbai");
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        source = sharedPreferences.getString(Constants.SOURCE_CITY, "delhi");
+        dest = sharedPreferences.getString(Constants.DESTINATION_CITY, "mumbai");
 
         selectdate.setText(dates);
         city.setText(source + " to " + dest);
@@ -326,13 +331,12 @@ public class BusList extends AppCompatActivity implements OnDateSetListener, Tim
 
     @Override
     public void onClick(View view) {
-        switch (view.getId())
-        {
-            case R.id.city :
+        switch (view.getId()) {
+            case R.id.city:
                 Intent i = new Intent(BusList.this, SelectCity.class);
                 startActivity(i);
                 break;
-            case R.id.seldate :
+            case R.id.seldate:
                 datePickerDialog.setVibrate(isVibrate());
                 datePickerDialog.setYearRange(1985, 2028);
                 datePickerDialog.setCloseOnSingleTapDay(isCloseOnSingleTapDay());

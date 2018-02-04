@@ -15,9 +15,10 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 
-import com.estimote.sdk.BeaconManager;
+import com.estimote.coresdk.service.BeaconManager;
+import com.example.hp.tourmate.MainActivity;
+import com.example.hp.tourmate.main.utils.Constants;
 
-import utils.Constants;
 
 public class MyApplication extends Application {
 

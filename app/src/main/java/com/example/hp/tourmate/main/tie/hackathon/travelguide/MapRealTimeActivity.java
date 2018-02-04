@@ -21,6 +21,9 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.example.hp.tourmate.R;
+import com.example.hp.tourmate.main.utils.Constants;
+import com.example.hp.tourmate.main.utils.GPSTracker;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -36,9 +39,6 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
-import utils.Constants;
-import utils.GPSTracker;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import okhttp3.Call;
@@ -50,9 +50,10 @@ import okhttp3.Response;
 /**
  * Show markers on map around user's current location
  */
-public class MapRealTimeActivity extends AppCompatActivity{
+public class MapRealTimeActivity extends AppCompatActivity {
 
-    @BindView(R.id.data) ScrollView sc;
+    @BindView(R.id.data)
+    ScrollView sc;
 
     private com.google.android.gms.maps.MapFragment mapFragment;
     private GoogleMap map;
@@ -91,19 +92,19 @@ public class MapRealTimeActivity extends AppCompatActivity{
 
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
 
-        sorcelat    = sharedPreferences.getString(Constants.SOURCE_CITY_LAT, Constants.DELHI_LAT);
-        sorcelon    = sharedPreferences.getString(Constants.SOURCE_CITY_LON, Constants.DELHI_LON);
-        deslat      = sharedPreferences.getString(Constants.DESTINATION_CITY_LAT, Constants.MUMBAI_LAT);
-        deslon      = sharedPreferences.getString(Constants.DESTINATION_CITY_LON, Constants.MUMBAI_LON);
-        surce       = sharedPreferences.getString(Constants.SOURCE_CITY, "Delhi");
-        dest        = sharedPreferences.getString(Constants.DESTINATION_CITY, "Mumbai");
+        sorcelat = sharedPreferences.getString(Constants.SOURCE_CITY_LAT, Constants.DELHI_LAT);
+        sorcelon = sharedPreferences.getString(Constants.SOURCE_CITY_LON, Constants.DELHI_LON);
+        deslat = sharedPreferences.getString(Constants.DESTINATION_CITY_LAT, Constants.MUMBAI_LAT);
+        deslon = sharedPreferences.getString(Constants.DESTINATION_CITY_LON, Constants.MUMBAI_LON);
+        surce = sharedPreferences.getString(Constants.SOURCE_CITY, "Delhi");
+        dest = sharedPreferences.getString(Constants.DESTINATION_CITY, "Mumbai");
 
         sc.setVisibility(View.GONE);
 
-        name    = new ArrayList<>();
-        nums    = new ArrayList<>();
-        web     = new ArrayList<>();
-        addr    = new ArrayList<>();
+        name = new ArrayList<>();
+        nums = new ArrayList<>();
+        web = new ArrayList<>();
+        addr = new ArrayList<>();
 
         curlat = deslat;
         curlon = deslon;

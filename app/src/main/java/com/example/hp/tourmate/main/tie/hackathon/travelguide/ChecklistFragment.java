@@ -21,17 +21,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ListView;
 
-import com.rey.material.widget.CheckBox;
-
+import com.example.hp.tourmate.R;
+import com.example.hp.tourmate.main.utils.Constants;
+import com.example.hp.tourmate.main.utils.DBhelp;
+import com.example.hp.tourmate.main.utils.TableEntry;
 import java.util.ArrayList;
 import java.util.List;
-
-import utils.Constants;
-import utils.DBhelp;
-import utils.TableEntry;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -40,18 +39,19 @@ import butterknife.OnClick;
 public class ChecklistFragment extends Fragment {
 
 
-    private final List<String> id       = new ArrayList<>();
-    private final List<String> task     = new ArrayList<>();
-    private final List<String> isdone   = new ArrayList<>();
+    private final List<String> id = new ArrayList<>();
+    private final List<String> task = new ArrayList<>();
+    private final List<String> isdone = new ArrayList<>();
 
-    private CheckList_adapter   ad;
-    private Activity            activity;
-    private DBhelp              dbhelp;
-    private SharedPreferences   s;
+    private CheckList_adapter ad;
+    private Activity activity;
+    private DBhelp dbhelp;
+    private SharedPreferences s;
     private SharedPreferences.Editor e;
     private SQLiteDatabase db;
     private final List<String> base_task = new ArrayList<>();
-    @BindView(R.id.lv) ListView lv;
+    @BindView(R.id.lv)
+    ListView lv;
 
     public ChecklistFragment() {
     }
@@ -64,7 +64,7 @@ public class ChecklistFragment extends Fragment {
         dbhelp = new DBhelp(getContext());
         db = dbhelp.getWritableDatabase();
 
-        ButterKnife.bind(this,v);
+        ButterKnife.bind(this, v);
 
         s = PreferenceManager.getDefaultSharedPreferences(activity);
         e = s.edit();
@@ -99,7 +99,8 @@ public class ChecklistFragment extends Fragment {
         return v;
     }
 
-    @OnClick(R.id.add) void onClick(){
+    @OnClick(R.id.add)
+    void onClick() {
         AlertDialog.Builder builder = new AlertDialog.Builder(activity);
         LayoutInflater inflater = (activity).getLayoutInflater();
         builder.setTitle("Add new item");

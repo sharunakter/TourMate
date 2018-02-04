@@ -12,14 +12,19 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 
+import com.example.hp.tourmate.R;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class SelectModeOfTransport extends AppCompatActivity implements View.OnClickListener {
 
-    @BindView(R.id.car)     LinearLayout car;
-    @BindView(R.id.train)   LinearLayout train;
-    @BindView(R.id.bus)     LinearLayout bus;
+    @BindView(R.id.car)
+    LinearLayout car;
+    @BindView(R.id.train)
+    LinearLayout train;
+    @BindView(R.id.bus)
+    LinearLayout bus;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -5,12 +5,12 @@ package com.example.hp.tourmate.main.tie.hackathon.travelguide.destinations.desc
  */
 
 
+import com.example.hp.tourmate.main.utils.Constants;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
-
-import utils.Constants;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.OkHttpClient;

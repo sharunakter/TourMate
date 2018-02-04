@@ -21,6 +21,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.example.hp.tourmate.R;
 import com.example.hp.tourmate.main.utils.Constants;
 
 import org.json.JSONArray;
@@ -29,6 +30,7 @@ import org.json.JSONException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import okhttp3.Call;
@@ -39,7 +41,8 @@ import okhttp3.Response;
 
 public class Tweets extends AppCompatActivity {
 
-    @BindView(R.id.list) ListView lv;
+    @BindView(R.id.list)
+    ListView lv;
 
     private Intent i;
     private String id;

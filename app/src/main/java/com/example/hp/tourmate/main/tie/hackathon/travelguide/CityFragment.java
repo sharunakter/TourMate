@@ -27,56 +27,58 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.hp.tourmate.R;
+import com.example.hp.tourmate.main.flipviewpager.adapter.BaseFlipAdapter;
+import com.example.hp.tourmate.main.flipviewpager.utils.FlipSettings;
+import com.example.hp.tourmate.main.objects.City;
+import com.example.hp.tourmate.main.tie.hackathon.travelguide.destinations.description.FinalCityInfo;
+import com.example.hp.tourmate.main.tie.hackathon.travelguide.destinations.funfacts.FunFacts;
+import com.example.hp.tourmate.main.utils.Constants;
+import com.example.hp.tourmate.main.views.FontTextView;
 import com.squareup.picasso.Picasso;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-
-import utils.Constants;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnTextChanged;
-import flipviewpager.adapter.BaseFlipAdapter;
-import flipviewpager.utils.FlipSettings;
-import objects.City;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
-import tie.hackathon.travelguide.destinations.description.FinalCityInfo;
-import tie.hackathon.travelguide.destinations.funfacts.FunFacts;
-import views.FontTextView;
 
 public class CityFragment extends Fragment {
 
-    @BindView(R.id.cityname)    AutoCompleteTextView    cityname;
-    @BindView(R.id.pb)          ProgressBar             pb;
-    @BindView(R.id.music_list)  ListView                lv;
+    @BindView(R.id.cityname)
+    AutoCompleteTextView cityname;
+    @BindView(R.id.pb)
+    ProgressBar pb;
+    @BindView(R.id.music_list)
+    ListView lv;
 
-    List<String> id     = new ArrayList<>();
-    List<String> list2  = new ArrayList<>();
+    List<String> id = new ArrayList<>();
+    List<String> list2 = new ArrayList<>();
 
-    private String      nameyet;
-    private String      cityid;
-    private Activity    activity;
-    private Typeface    tex;
-    private Handler     mHandler;
+    private String nameyet;
+    private String cityid;
+    private Activity activity;
+    private Typeface tex;
+    private Handler mHandler;
 
-    public CityFragment() {}
+    public CityFragment() {
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.content_citylist, container, false);
 
-        ButterKnife.bind(this,v);
+        ButterKnife.bind(this, v);
 
         // Hide keyboard
         InputMethodManager imm = (InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
@@ -91,7 +93,8 @@ public class CityFragment extends Fragment {
         return v;
     }
 
-    @OnTextChanged(R.id.cityname) void onTextChanged(){
+    @OnTextChanged(R.id.cityname)
+    void onTextChanged() {
         nameyet = cityname.getText().toString();
         if (!nameyet.contains(" ")) {
             Log.e("name", nameyet + " ");

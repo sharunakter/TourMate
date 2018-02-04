@@ -22,15 +22,19 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.hp.tourmate.R;
 import com.example.hp.tourmate.main.utils.Constants;
 import com.example.hp.tourmate.main.utils.Services;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class ShareContact extends AppCompatActivity implements View.OnClickListener{
+public class ShareContact extends AppCompatActivity implements View.OnClickListener {
 
-    @BindView(R.id.create) Button create;
-    @BindView(R.id.scan) Button scan;
+    @BindView(R.id.create)
+    Button create;
+    @BindView(R.id.scan)
+    Button scan;
     private static final int ACTIVITY_CREATE = 0, ACTIVITY_SCAN = 1;
     private SharedPreferences s;
     private SharedPreferences.Editor e;
@@ -117,9 +121,8 @@ public class ShareContact extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
 
         Intent qrDroid;
-        switch (view.getId())
-        {
-            case R.id.scan :
+        switch (view.getId()) {
+            case R.id.scan:
                 qrDroid = new Intent(Services.SCAN); //Set action "la.droid.qr.scan"
 
                 //Check whether a complete or displayable result is needed
@@ -132,7 +135,7 @@ public class ShareContact extends AppCompatActivity implements View.OnClickListe
                     Toast.makeText(ShareContact.this, "can't be generated. Need to download QR services", Toast.LENGTH_SHORT).show();
                 }
                 break;
-            case R.id.create :
+            case R.id.create:
                 //Create a new Intent to send to QR Droid
                 qrDroid = new Intent(Services.ENCODE); //Set action "la.droid.qr.encode"
 

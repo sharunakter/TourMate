@@ -2,6 +2,8 @@ package com.example.hp.tourmate.main.adapters;
 
 /**
  * Created by HP on 1/31/2018.
+ * <p>
+ * Created by swati on 20/10/16.
  */
 
 /**
@@ -13,12 +15,9 @@ import android.support.v4.view.PagerAdapter;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-
+import com.example.hp.tourmate.main.utils.TouchImageView;
 import com.squareup.picasso.Picasso;
-
 import java.util.ArrayList;
-
-import utils.TouchImageView;
 
 public class ImageAdapter extends PagerAdapter {
     private final Context context;

@@ -13,6 +13,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+
+import com.example.hp.tourmate.R;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -20,13 +23,19 @@ import butterknife.ButterKnife;
 public class TravelFragment extends Fragment implements View.OnClickListener {
 
     private Activity activity;
-    @BindView(R.id.vehicle)LinearLayout vehicle;
-    @BindView(R.id.accomo) LinearLayout acc;
-    @BindView(R.id.shopping)LinearLayout shop;
-    @BindView(R.id.realtime)LinearLayout realtime;
-    @BindView(R.id.mytrips)LinearLayout mytrips;
+    @BindView(R.id.vehicle)
+    LinearLayout vehicle;
+    @BindView(R.id.accomo)
+    LinearLayout acc;
+    @BindView(R.id.shopping)
+    LinearLayout shop;
+    @BindView(R.id.realtime)
+    LinearLayout realtime;
+    @BindView(R.id.mytrips)
+    LinearLayout mytrips;
 
-    public TravelFragment() {}
+    public TravelFragment() {
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -34,7 +43,7 @@ public class TravelFragment extends Fragment implements View.OnClickListener {
 
         View v = inflater.inflate(R.layout.content_travel, container, false);
 
-        ButterKnife.bind(this,v);
+        ButterKnife.bind(this, v);
 
         realtime.setOnClickListener(this);
         mytrips.setOnClickListener(this);

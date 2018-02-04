@@ -17,15 +17,16 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.example.hp.tourmate.R;
+import com.example.hp.tourmate.main.tie.hackathon.travelguide.PlacesOnMap;
+import com.example.hp.tourmate.main.tie.hackathon.travelguide.Tweets;
+import com.example.hp.tourmate.main.tie.hackathon.travelguide.destinations.funfacts.FunFacts;
 import com.ms.square.android.expandabletextview.ExpandableTextView;
 import com.squareup.picasso.Picasso;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import tie.hackathon.travelguide.PlacesOnMap;
-import tie.hackathon.travelguide.R;
-import tie.hackathon.travelguide.Tweets;
-import tie.hackathon.travelguide.destinations.funfacts.FunFacts;
+
 
 
 public class FinalCityInfo extends AppCompatActivity implements View.OnClickListener, FinalCityInfoView {
@@ -44,19 +45,32 @@ public class FinalCityInfo extends AppCompatActivity implements View.OnClickList
     private String lat;
     private String lon;
 
-    @BindView(R.id.temp) TextView temp;
-    @BindView(R.id.humidit) TextView humidity;
-    @BindView(R.id.weatherinfo) TextView weatherinfo;
-    @BindView(R.id.head) TextView title;
-    @BindView(R.id.image) ImageView iv;
-    @BindView(R.id.icon) ImageView ico;
-    @BindView(R.id.expand_text_view) ExpandableTextView des;
-    @BindView(R.id.funfact) LinearLayout funfact;
-    @BindView(R.id.restau) LinearLayout restau;
-    @BindView(R.id.hangout) LinearLayout hangout;
-    @BindView(R.id.monu) LinearLayout monum;
-    @BindView(R.id.shoppp) LinearLayout shopp;
-    @BindView(R.id.trends) LinearLayout trend;
+    @BindView(R.id.temp)
+    TextView temp;
+    @BindView(R.id.humidit)
+    TextView humidity;
+    @BindView(R.id.weatherinfo)
+    TextView weatherinfo;
+    @BindView(R.id.head)
+    TextView title;
+    @BindView(R.id.image)
+    ImageView iv;
+    @BindView(R.id.icon)
+    ImageView ico;
+    @BindView(R.id.expand_text_view)
+    ExpandableTextView des;
+    @BindView(R.id.funfact)
+    LinearLayout funfact;
+    @BindView(R.id.restau)
+    LinearLayout restau;
+    @BindView(R.id.hangout)
+    LinearLayout hangout;
+    @BindView(R.id.monu)
+    LinearLayout monum;
+    @BindView(R.id.shoppp)
+    LinearLayout shopp;
+    @BindView(R.id.trends)
+    LinearLayout trend;
 
     FinalCityInfoPresenter mFinalCityInfoPresenter;
 
@@ -69,10 +83,10 @@ public class FinalCityInfo extends AppCompatActivity implements View.OnClickList
 
         mFinalCityInfoPresenter = new FinalCityInfoPresenter();
 
-        code        = Typeface.createFromAsset(getAssets(), "fonts/whitney_book.ttf");
-        codeb       = Typeface.createFromAsset(getAssets(), "fonts/CODE_Bold.otf");
-        tex         = Typeface.createFromAsset(getAssets(), "fonts/texgyreadventor-regular.otf");
-        mHandler    = new Handler(Looper.getMainLooper());
+        code = Typeface.createFromAsset(getAssets(), "fonts/whitney_book.ttf");
+        codeb = Typeface.createFromAsset(getAssets(), "fonts/CODE_Bold.otf");
+        tex = Typeface.createFromAsset(getAssets(), "fonts/texgyreadventor-regular.otf");
+        mHandler = new Handler(Looper.getMainLooper());
 
         intent = getIntent();
         mTitle = intent.getStringExtra("name_");
@@ -204,13 +218,14 @@ public class FinalCityInfo extends AppCompatActivity implements View.OnClickList
     /**
      * method called by FinalCityInfoPresenter when the network request to fetch city information comes back successfully
      * used to display the fetched information from backend on activity
+     *
      * @param description - description of city
-     * @param iconUrl - image url
-     * @param temp - current temperature of requested city
-     * @param humidity - current humidity of requested city
+     * @param iconUrl     - image url
+     * @param temp        - current temperature of requested city
+     * @param humidity    - current humidity of requested city
      * @param weatherInfo - weather information of requested city
-     * @param lat - latitude of requested city
-     * @param lon - longitude of requested city
+     * @param lat         - latitude of requested city
+     * @param lon         - longitude of requested city
      */
     @Override
     public void parseResult(final String description, final String iconUrl, final String temp, final String humidity, final String weatherInfo,

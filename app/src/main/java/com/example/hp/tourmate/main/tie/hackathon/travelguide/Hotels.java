@@ -26,6 +26,8 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.example.hp.tourmate.R;
+import com.example.hp.tourmate.main.utils.Constants;
 import com.fourmob.datetimepicker.date.DatePickerDialog;
 import com.sleepbot.datetimepicker.time.RadialPickerLayout;
 import com.sleepbot.datetimepicker.time.TimePickerDialog;
@@ -36,8 +38,6 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.Calendar;
-
-import utils.Constants;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import okhttp3.Call;
@@ -49,12 +49,16 @@ import okhttp3.Response;
 /**
  * Display list of hotels in destination city
  */
-public class Hotels extends AppCompatActivity implements DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener,View.OnClickListener {
+public class Hotels extends AppCompatActivity implements DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener, View.OnClickListener {
 
-    @BindView(R.id.pb)          ProgressBar pb;
-    @BindView(R.id.music_list)  ListView    lv;
-    @BindView(R.id.seldate)     TextView    selectdate;
-    @BindView(R.id.city)        TextView    city;
+    @BindView(R.id.pb)
+    ProgressBar pb;
+    @BindView(R.id.music_list)
+    ListView lv;
+    @BindView(R.id.seldate)
+    TextView selectdate;
+    @BindView(R.id.city)
+    TextView city;
 
     private String source;
     private String dest;
@@ -78,12 +82,12 @@ public class Hotels extends AppCompatActivity implements DatePickerDialog.OnDate
 
         ButterKnife.bind(this);
 
-        mHandler    = new Handler(Looper.getMainLooper());
-        s           = PreferenceManager.getDefaultSharedPreferences(this);
-        source      = s.getString(Constants.SOURCE_CITY_ID, "1");
-        dest        = s.getString(Constants.DESTINATION_CITY_ID, "1");
-        sourcet     = s.getString(Constants.SOURCE_CITY, "Delhi");
-        destt       = s.getString(Constants.DESTINATION_CITY, "Mumbai");
+        mHandler = new Handler(Looper.getMainLooper());
+        s = PreferenceManager.getDefaultSharedPreferences(this);
+        source = s.getString(Constants.SOURCE_CITY_ID, "1");
+        dest = s.getString(Constants.DESTINATION_CITY_ID, "1");
+        sourcet = s.getString(Constants.SOURCE_CITY, "Delhi");
+        destt = s.getString(Constants.DESTINATION_CITY, "Mumbai");
 
         city.setText("Showing " + destt + " hotels");
         selectdate.setText("Check In : " + dates);
@@ -117,19 +121,45 @@ public class Hotels extends AppCompatActivity implements DatePickerDialog.OnDate
         dates = day + "-";
         String monthString;
         switch (month + 1) {
-            case 1: monthString = "January";    break;
-            case 2: monthString = "February";   break;
-            case 3: monthString = "March";      break;
-            case 4: monthString = "April";      break;
-            case 5: monthString = "May";        break;
-            case 6: monthString = "June";       break;
-            case 7: monthString = "July";       break;
-            case 8: monthString = "August";     break;
-            case 9: monthString = "September";  break;
-            case 10:monthString = "October";    break;
-            case 11:monthString = "November";   break;
-            case 12:monthString = "December";   break;
-            default:monthString = "Invalid month";break;
+            case 1:
+                monthString = "January";
+                break;
+            case 2:
+                monthString = "February";
+                break;
+            case 3:
+                monthString = "March";
+                break;
+            case 4:
+                monthString = "April";
+                break;
+            case 5:
+                monthString = "May";
+                break;
+            case 6:
+                monthString = "June";
+                break;
+            case 7:
+                monthString = "July";
+                break;
+            case 8:
+                monthString = "August";
+                break;
+            case 9:
+                monthString = "September";
+                break;
+            case 10:
+                monthString = "October";
+                break;
+            case 11:
+                monthString = "November";
+                break;
+            case 12:
+                monthString = "December";
+                break;
+            default:
+                monthString = "Invalid month";
+                break;
         }
 
         dates = dates + monthString;
@@ -140,7 +170,8 @@ public class Hotels extends AppCompatActivity implements DatePickerDialog.OnDate
     }
 
     @Override
-    public void onTimeSet(RadialPickerLayout view, int hourOfDay, int minute) {}
+    public void onTimeSet(RadialPickerLayout view, int hourOfDay, int minute) {
+    }
 
     /**
      * Calls API to get hotel list
@@ -258,11 +289,11 @@ public class Hotels extends AppCompatActivity implements DatePickerDialog.OnDate
 
             LinearLayout call, map, book;
 
-            TextView Title          = (TextView)        vi.findViewById(R.id.VideoTitle);
-            TextView Description    = (TextView)        vi.findViewById(R.id.VideoDescription);
-            call                    = (LinearLayout)    vi.findViewById(R.id.call);
-            map                     = (LinearLayout)    vi.findViewById(R.id.map);
-            book                    = (LinearLayout)    vi.findViewById(R.id.book);
+            TextView Title = (TextView) vi.findViewById(R.id.VideoTitle);
+            TextView Description = (TextView) vi.findViewById(R.id.VideoDescription);
+            call = (LinearLayout) vi.findViewById(R.id.call);
+            map = (LinearLayout) vi.findViewById(R.id.map);
+            book = (LinearLayout) vi.findViewById(R.id.book);
 
             try {
                 Title.setText(FeedItems.getJSONObject(position).getString("name"));
@@ -322,13 +353,12 @@ public class Hotels extends AppCompatActivity implements DatePickerDialog.OnDate
     }
 
     public void onClick(View view) {
-        switch (view.getId())
-        {
-            case R.id.city :
+        switch (view.getId()) {
+            case R.id.city:
                 Intent i = new Intent(Hotels.this, SelectCity.class);
                 startActivity(i);
                 break;
-            case R.id.seldate :
+            case R.id.seldate:
                 datePickerDialog.setVibrate(isVibrate());
                 datePickerDialog.setYearRange(1985, 2028);
                 datePickerDialog.setCloseOnSingleTapDay(isCloseOnSingleTapDay());

@@ -11,6 +11,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import com.example.hp.tourmate.R;
+
 import butterknife.ButterKnife;
 
 public class Checklist extends AppCompatActivity {

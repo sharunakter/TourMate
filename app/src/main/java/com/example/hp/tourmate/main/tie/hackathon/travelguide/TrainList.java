@@ -26,6 +26,7 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.example.hp.tourmate.R;
 import com.example.hp.tourmate.main.utils.Constants;
 import com.sleepbot.datetimepicker.time.RadialPickerLayout;
 import com.sleepbot.datetimepicker.time.TimePickerDialog;
@@ -36,6 +37,7 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.Calendar;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import okhttp3.Call;
@@ -44,12 +46,16 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class TrainList extends AppCompatActivity implements com.fourmob.datetimepicker.date.DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener,View.OnClickListener {
+public class TrainList extends AppCompatActivity implements com.fourmob.datetimepicker.date.DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener, View.OnClickListener {
 
-    @BindView(R.id.pb) ProgressBar pb;
-    @BindView(R.id.music_list)ListView lv;
-    @BindView(R.id.city)TextView city;
-    @BindView(R.id.seldate)TextView selectdate;
+    @BindView(R.id.pb)
+    ProgressBar pb;
+    @BindView(R.id.music_list)
+    ListView lv;
+    @BindView(R.id.city)
+    TextView city;
+    @BindView(R.id.seldate)
+    TextView selectdate;
 
     private String dates = "17-10";
     private String source;
@@ -122,7 +128,8 @@ public class TrainList extends AppCompatActivity implements com.fourmob.datetime
     }
 
     @Override
-    public void onTimeSet(RadialPickerLayout view, int hourOfDay, int minute) {}
+    public void onTimeSet(RadialPickerLayout view, int hourOfDay, int minute) {
+    }
 
     /**
      * Calls API to get train list
@@ -189,13 +196,12 @@ public class TrainList extends AppCompatActivity implements com.fourmob.datetime
 
     @Override
     public void onClick(View view) {
-        switch (view.getId())
-        {
-            case R.id.city :
+        switch (view.getId()) {
+            case R.id.city:
                 Intent i = new Intent(TrainList.this, SelectCity.class);
                 startActivity(i);
                 break;
-            case R.id.seldate :
+            case R.id.seldate:
                 datePickerDialog.setVibrate(isVibrate());
                 datePickerDialog.setYearRange(1985, 2028);
                 datePickerDialog.setCloseOnSingleTapDay(isCloseOnSingleTapDay());

@@ -23,37 +23,49 @@ import android.widget.Toast;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.dd.processbutton.FlatButton;
+import com.example.hp.tourmate.MainActivity;
+import com.example.hp.tourmate.R;
+import com.example.hp.tourmate.main.utils.Constants;
 
-import utils.Constants;
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import tie.hackathon.travelguide.MainActivity;
-import tie.hackathon.travelguide.R;
+
 
 /**
  * Initiates login
  */
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener, LoginView {
 
-    @BindView(R.id.signup)              TextView        signup;
-    @BindView(R.id.login)               TextView        login;
-    @BindView(R.id.signup_layout)       LinearLayout    sig;
-    @BindView(R.id.loginlayout)         LinearLayout    log;
-    @BindView(R.id.input_num_login)     EditText        num_login;
-    @BindView(R.id.input_pass_login)    EditText        pass_login;
-    @BindView(R.id.input_num_signup)    EditText        num_signup;
-    @BindView(R.id.input_pass_signup)   EditText        pass_signup;
-    @BindView(R.id.input_name_signup)   EditText        name;
-    @BindView(R.id.ok_login)            FlatButton      ok_login;
-    @BindView(R.id.ok_signup)           FlatButton      ok_signup;
+    @BindView(R.id.signup)
+    TextView signup;
+    @BindView(R.id.login)
+    TextView login;
+    @BindView(R.id.signup_layout)
+    LinearLayout sig;
+    @BindView(R.id.loginlayout)
+    LinearLayout log;
+    @BindView(R.id.input_num_login)
+    EditText num_login;
+    @BindView(R.id.input_pass_login)
+    EditText pass_login;
+    @BindView(R.id.input_num_signup)
+    EditText num_signup;
+    @BindView(R.id.input_pass_signup)
+    EditText pass_signup;
+    @BindView(R.id.input_name_signup)
+    EditText name;
+    @BindView(R.id.ok_login)
+    FlatButton ok_login;
+    @BindView(R.id.ok_signup)
+    FlatButton ok_signup;
 
     private String numString;
     private String passString;
     private String nameString;
 
-    private SharedPreferences   sharedPreferences;
-    private MaterialDialog      dialog;
-    private Handler             mhandler;
+    private SharedPreferences sharedPreferences;
+    private MaterialDialog dialog;
+    private Handler mhandler;
 
     private LoginPresenter loginPresenter = new LoginPresenter();
 
@@ -94,21 +106,21 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View view) {
         switch (view.getId()) {
             // Open signup
-            case R.id.signup :
+            case R.id.signup:
                 loginPresenter.signUp();
                 break;
             // Open login
-            case R.id.login :
+            case R.id.login:
                 loginPresenter.login();
                 break;
             // Call login
-            case R.id.ok_login :
+            case R.id.ok_login:
                 numString = num_login.getText().toString();
                 passString = pass_login.getText().toString();
                 loginPresenter.ok_login(numString, passString, mhandler);
                 break;
             // Call signup
-            case R.id.ok_signup :
+            case R.id.ok_signup:
                 numString = num_signup.getText().toString();
                 passString = pass_signup.getText().toString();
                 nameString = name.getText().toString();

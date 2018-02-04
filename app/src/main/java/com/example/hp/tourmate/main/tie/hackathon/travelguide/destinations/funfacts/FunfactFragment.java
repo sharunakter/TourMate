@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.hp.tourmate.R;
 import com.squareup.picasso.Picasso;
 
 import java.io.File;
@@ -23,7 +24,6 @@ import java.io.FileOutputStream;
 
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import tie.hackathon.travelguide.R;
 
 /**
  * Created by swati on 25/1/16.
@@ -32,9 +32,9 @@ import tie.hackathon.travelguide.R;
  */
 public class FunfactFragment extends Fragment {
 
-    private static final String EXTRA_MESSAGE_IMAGE     = "_image";
-    private static final String EXTRA_MESSAGE_TEXT      = "_text";
-    private static final String EXTRA_MESSAGE_TITLE     = "_title";
+    private static final String EXTRA_MESSAGE_IMAGE = "_image";
+    private static final String EXTRA_MESSAGE_TEXT = "_text";
+    private static final String EXTRA_MESSAGE_TITLE = "_title";
     private File file;
 
     /**
@@ -73,20 +73,21 @@ public class FunfactFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        String image    = getArguments().getString(EXTRA_MESSAGE_IMAGE);
-        String text     = getArguments().getString(EXTRA_MESSAGE_TEXT);
-        View v          = inflater.inflate(R.layout.funfact_fragment, container, false);
-        TextView tv     = (TextView) v.findViewById(R.id.tv);
+        String image = getArguments().getString(EXTRA_MESSAGE_IMAGE);
+        String text = getArguments().getString(EXTRA_MESSAGE_TEXT);
+        View v = inflater.inflate(R.layout.funfact_fragment, container, false);
+        TextView tv = (TextView) v.findViewById(R.id.tv);
         tv.setText(text);
-        tv              = (TextView) v.findViewById(R.id.head);
+        tv = (TextView) v.findViewById(R.id.head);
         tv.setText(getArguments().getString(EXTRA_MESSAGE_TITLE));
-        ImageView iv    = (ImageView) v.findViewById(R.id.imag);
+        ImageView iv = (ImageView) v.findViewById(R.id.imag);
         Picasso.with(getContext()).load(image).error(R.drawable.delhi).placeholder(R.drawable.delhi).into(iv);
         ButterKnife.bind(this, v);
         return v;
     }
 
-    @OnClick(R.id.fab) void onClick(){
+    @OnClick(R.id.fab)
+    void onClick() {
         View rootView = getActivity().getWindow().getDecorView().findViewById(android.R.id.content);
         Bitmap b = getScreenShot(rootView);
         store(b, "myfile" + System.currentTimeMillis() + ".png");

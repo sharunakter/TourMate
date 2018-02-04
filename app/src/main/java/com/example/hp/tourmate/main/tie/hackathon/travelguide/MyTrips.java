@@ -23,6 +23,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.example.hp.tourmate.R;
+import com.example.hp.tourmate.main.utils.Constants;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
@@ -33,8 +35,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
-
-import utils.Constants;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import okhttp3.Call;
@@ -45,7 +45,8 @@ import okhttp3.Response;
 
 public class MyTrips extends AppCompatActivity {
 
-    @BindView(R.id.gv) GridView g;
+    @BindView(R.id.gv)
+    GridView g;
 
     private MaterialDialog dialog;
     private List<String> id;
@@ -65,14 +66,14 @@ public class MyTrips extends AppCompatActivity {
 
         ButterKnife.bind(this);
 
-        id      = new ArrayList<>();
-        name    = new ArrayList<>();
-        tname   = new ArrayList<>();
-        image   = new ArrayList<>();
-        start   = new ArrayList<>();
-        end     = new ArrayList<>();
-        s       = PreferenceManager.getDefaultSharedPreferences(this);
-        userid  = s.getString(Constants.USER_ID, "1");
+        id = new ArrayList<>();
+        name = new ArrayList<>();
+        tname = new ArrayList<>();
+        image = new ArrayList<>();
+        start = new ArrayList<>();
+        end = new ArrayList<>();
+        s = PreferenceManager.getDefaultSharedPreferences(this);
+        userid = s.getString(Constants.USER_ID, "1");
         mHandler = new Handler(Looper.getMainLooper());
 
         id.add("yo");
@@ -161,14 +162,15 @@ public class MyTrips extends AppCompatActivity {
         private final List<String> ids, name, image, start, end;
         ImageView city;
         TextView cityname, date;
+
         public MyTripsadapter(Activity context, List<String> id, List<String> name, List<String> image, List<String> start, List<String> end) {
             super(context, R.layout.trip_listitem, id);
-            this.context    = context;
-            ids             = id;
-            this.name       = name;
-            this.image      = image;
-            this.start      = start;
-            this.end        = end;
+            this.context = context;
+            ids = id;
+            this.name = name;
+            this.image = image;
+            this.start = start;
+            this.end = end;
         }
 
         @Override

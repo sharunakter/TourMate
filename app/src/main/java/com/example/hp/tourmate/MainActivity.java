@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.graphics.Region;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -17,22 +18,26 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-
-import com.estimote.sdk.BeaconManager;
-import com.estimote.sdk.Region;
+import com.estimote.coresdk.service.BeaconManager;
+import com.example.hp.tourmate.main.tie.hackathon.travelguide.CityFragment;
+import com.example.hp.tourmate.main.tie.hackathon.travelguide.DetectedBeacon;
+import com.example.hp.tourmate.main.tie.hackathon.travelguide.EmergencyFragment;
+import com.example.hp.tourmate.main.tie.hackathon.travelguide.SelectCity;
+import com.example.hp.tourmate.main.tie.hackathon.travelguide.TravelFragment;
+import com.example.hp.tourmate.main.tie.hackathon.travelguide.UtilitiesFragment;
+import com.example.hp.tourmate.main.tie.hackathon.travelguide.login.LoginActivity;
 import com.example.hp.tourmate.main.utils.Constants;
-import tie.hackathon.travelguide.login.LoginActivity;
 
 /**
  * Launcher Activity; Handles fragment changes;
  */
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    private SharedPreferences   sharedPreferences;
-    private Boolean             discovered = false;
-    private String              beaconmajor;
-    private BeaconManager       beaconManager;
-    private Region              region;
+    private SharedPreferences sharedPreferences;
+    private Boolean discovered = false;
+    private String beaconmajor;
+    private BeaconManager beaconManager;
+    private Region region;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
